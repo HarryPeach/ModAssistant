@@ -356,21 +356,6 @@ namespace ModAssistant
             return null;
         }
 
-        public static bool IsVoid()
-        {
-            string directory = App.BeatSaberInstallDirectory;
-            string pluginsDirectory = Path.Combine(directory, "Beat Saber_Data", "Plugins");
-
-            if (File.Exists(Path.Combine(directory, "IGG-GAMES.COM.url")) ||
-                File.Exists(Path.Combine(directory, "SmartSteamEmu.ini")) ||
-                File.Exists(Path.Combine(directory, "GAMESTORRENT.CO.url")) ||
-                File.Exists(Path.Combine(pluginsDirectory, "BSteam crack.dll")) ||
-                File.Exists(Path.Combine(pluginsDirectory, "HUHUVR_steam_api64.dll")) ||
-                Directory.GetFiles(pluginsDirectory, "*.ini", SearchOption.TopDirectoryOnly).Where(x => Path.GetFileName(x) != "desktop.ini").Any())
-                return true;
-            return false;
-        }
-
         public static byte[] StreamToArray(Stream input)
         {
             byte[] buffer = new byte[16 * 1024];
