@@ -56,32 +56,21 @@ namespace ModAssistant
 
             Task.Run(() => LoadVersionsAsync());
 
-            if (!Properties.Settings.Default.Agreed || string.IsNullOrEmpty(Properties.Settings.Default.LastTab))
+            switch (Properties.Settings.Default.LastTab)
             {
-                Main.Content = Intro.Instance;
+                case "Mods":
+                default:
+                    _ = ShowModsPage();
+                    break;
+                case "About":
+                    Main.Content = About.Instance;
+                    break;
+                case "Options":
+                    Main.Content = Options.Instance;
+                    Themes.LoadThemes();
+                    break;
             }
-            else
-            {
-                switch (Properties.Settings.Default.LastTab)
-                {
-                    case "Intro":
-                        Main.Content = Intro.Instance;
-                        break;
-                    case "Mods":
-                        _ = ShowModsPage();
-                        break;
-                    case "About":
-                        Main.Content = About.Instance;
-                        break;
-                    case "Options":
-                        Main.Content = Options.Instance;
-                        Themes.LoadThemes();
-                        break;
-                    default:
-                        Main.Content = Intro.Instance;
-                        break;
-                }
-            }
+            
         }
 
         /* Force the app to shutdown when The main window is closed.
@@ -126,7 +115,7 @@ namespace ModAssistant
                         GameVersionsBoxOverride.IsEnabled = false;
                     }
 
-                    if (!string.IsNullOrEmpty(GameVersion) && Properties.Settings.Default.Agreed)
+                    if (!string.IsNullOrEmpty(GameVersion))
                     {
                         MainWindow.Instance.ModsButton.IsEnabled = true;
                     }
@@ -232,13 +221,6 @@ namespace ModAssistant
         private void ModsButton_Click(object sender, RoutedEventArgs e)
         {
             _ = ShowModsPage();
-        }
-
-        private void IntroButton_Click(object sender, RoutedEventArgs e)
-        {
-            Main.Content = Intro.Instance;
-            Properties.Settings.Default.LastTab = "Intro";
-            Properties.Settings.Default.Save();
         }
 
         private void AboutButton_Click(object sender, RoutedEventArgs e)
