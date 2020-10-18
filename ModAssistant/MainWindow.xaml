@@ -12,109 +12,115 @@
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-            <RowDefinition Height="50" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
-        <TabControl MaxHeight="400">
-            <TabItem Header="Mods">
-                <Frame
-                    Name="Main"
-                    Background="{DynamicResource FrameBackgroundColor}"
-                    NavigationUIVisibility="Hidden" />
-            </TabItem>
-            <TabItem Header="About">
-                <Frame
-                    Name="MainTODO"
-                    Background="{DynamicResource FrameBackgroundColor}"
-                    NavigationUIVisibility="Hidden" />
-            </TabItem>
-            <TabItem Header="Config">
-                <Frame
-                    Name="MainTODO2"
-                    Background="{DynamicResource FrameBackgroundColor}"
-                    NavigationUIVisibility="Hidden" />
-            </TabItem>
+        <TabControl Padding="0">
+            <TabItem Header="Mods" MouseLeftButtonUp="ModsButton_Click" />
+            <TabItem Header="About" MouseLeftButtonUp="AboutButton_Click"/>
+            <TabItem Header="Options" MouseLeftButtonUp="OptionsButton_Click"/>
         </TabControl>
-        <StackPanel
+        <Frame
+            Grid.Row="1"
+            Name="Main"
+            Background="{DynamicResource FrameBackgroundColor}"
+            NavigationUIVisibility="Hidden" />
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource MainWindow:VersionLabel}" />
+                <TextBlock Name="VersionText" />
+            </StackPanel>
+            
+            <StackPanel
                 Name="GameVersions"
-                VerticalAlignment="Bottom">
-            <TextBlock FontSize="10">
+                Grid.Row="1"
+                Orientation="Horizontal">
+                <TextBlock VerticalAlignment="Center">
                     <TextBlock Text="{DynamicResource MainWindow:GameVersionLabel}" />
                     :
                 </TextBlock>
-            <ComboBox
+                <ComboBox
                     Name="GameVersionsBox"
+                    VerticalAlignment="Center"
                     Margin="0,5,5,0"
                     SelectionChanged="GameVersionsBox_SelectionChanged" />
-            <ComboBox
+                <ComboBox
                     Name="GameVersionsBoxOverride"
+                    VerticalAlignment="Center"
                     Margin="0,5,5,0"
                     Visibility="Collapsed" />
-        </StackPanel>
-
-        <StackPanel Grid.Row="1" VerticalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" Text="{DynamicResource MainWindow:VersionLabel}" />
-            <TextBlock Name="VersionText" HorizontalAlignment="Center" />
-        </StackPanel>
-
-
-
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
-
-            <Border
-                    Height="40"
-                    VerticalAlignment="Bottom"
-                    BorderBrush="{DynamicResource BottomStatusBarOutline}"
-                    BorderThickness="1">
-                <TextBlock
-                        Name="MainTextBlock"
-                        Padding="5"
-                        Background="{DynamicResource BottomStatusBarBackground}"
-                        FontSize="20" />
-            </Border>
-            <Button
-                    Name="InfoButton"
-                    Grid.Column="1"
-                    Height="40"
-                    MinWidth="115"
-                    Margin="10,10,0,0"
-                    Padding="20,0,20,0"
-                    HorizontalAlignment="Right"
-                    Click="InfoButton_Click"
-                    IsEnabled="False">
-                <StackPanel>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="2"
+                        Margin="5">
+                <Border
+                        Height="20"
+                        MinWidth="300"
+                    Margin="5, 0"
+                        VerticalAlignment="Center"
+                        BorderBrush="{DynamicResource BottomStatusBarOutline}"
+                        BorderThickness="1">
                     <TextBlock
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Bottom"
-                            Text="{DynamicResource MainWindow:ModInfoButton}" />
-                </StackPanel>
-            </Button>
-            <Button
-                    Name="InstallButton"
-                    Grid.Column="2" 
-                    Height="40"
-                    MinWidth="115"
-                    Margin="10,10,0,0"
-                    Padding="20,0,20,0"
-                    HorizontalAlignment="Right"
-                    Click="InstallButton_Click"
-                    IsEnabled="False">
-                <StackPanel>
-                    <TextBlock
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Bottom"
-                            Text="{DynamicResource MainWindow:InstallButtonTop}" />
-                    <TextBlock
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Bottom"
-                            Text="{DynamicResource MainWindow:InstallButtonBottom}" />
-                </StackPanel>
-            </Button>
+                            Name="MainTextBlock"
+                            Padding="5"
+                        FontFamily="Courier New"
+                            Background="{DynamicResource BottomStatusBarBackground}"
+                            FontSize="12" />
+                </Border>
+                <Button
+                        Name="InfoButton"
+                        Grid.Column="1"
+                        Height="20"
+                        MinWidth="115"
+                        Margin="5,0"
+                        Padding="20,0,20,0"
+                        HorizontalAlignment="Right"
+                        Click="InfoButton_Click"
+                    VerticalAlignment="Center"
+                        IsEnabled="False">
+                    <StackPanel>
+                        <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Text="{DynamicResource MainWindow:ModInfoButton}" />
+                    </StackPanel>
+                </Button>
+                <Button
+                        Name="InstallButton"
+                        Grid.Column="2" 
+                        Height="20"
+                        MinWidth="115"
+                    
+                        Margin="5,0"
+                        Padding="20,0,20,0"
+                        HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                        Click="InstallButton_Click"
+                        IsEnabled="False">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Text="{DynamicResource MainWindow:InstallButtonTop}" />
+                        <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Text=" " />
+                        <TextBlock
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Text="{DynamicResource MainWindow:InstallButtonBottom}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>
