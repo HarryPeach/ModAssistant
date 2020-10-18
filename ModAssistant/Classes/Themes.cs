@@ -94,12 +94,6 @@ namespace ModAssistant
                 }
             }
 
-            // Refresh Themes dropdown in Options screen.
-            if (Options.Instance != null && Options.Instance.ApplicationThemeComboBox != null)
-            {
-                Options.Instance.ApplicationThemeComboBox.ItemsSource = LoadedThemes;
-                Options.Instance.ApplicationThemeComboBox.SelectedIndex = LoadedThemes.IndexOf(LoadedTheme);
-            }
         }
 
         /// <summary>

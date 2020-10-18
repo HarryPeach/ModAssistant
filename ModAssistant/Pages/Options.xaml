@@ -275,47 +275,6 @@
                 Text="{Binding InstallType}" />
             </StackPanel>
 
-
-            <TextBlock
-                    Grid.Row="10"
-                    Grid.Column="1"
-                    Margin="5,5,0,5"
-                    HorizontalAlignment="Left"
-                    FontSize="12">
-                    <TextBlock Text="{DynamicResource Options:ApplicationTheme}" />
-                    :&#160;
-                </TextBlock>
-            <ComboBox
-                    Name="ApplicationThemeComboBox"
-                    Grid.Row="10"
-                    Grid.Column="2"
-                    Height="20"
-                    HorizontalAlignment="Stretch"
-                    VerticalContentAlignment="Center"
-                    SelectionChanged="ApplicationThemeComboBox_SelectionChanged" Margin="0,3" />
-
-            <StackPanel
-                Grid.Row="11"
-                Grid.Column="1"
-                Orientation="Horizontal" Grid.RowSpan="2">
-                <Button
-                    Name="ApplicationThemeExportTemplate"
-                    Height="20"
-                    FontSize="10"
-                    Margin="5,5,5,5"
-                    Padding="5,0"
-                    Click="ApplicationThemeExportTemplate_Click"
-                    Content="{DynamicResource Options:ExportTemplateButton}" />
-                <Button
-                    Name="ApplicationThemeOpenThemesFolder"
-                    Height="20"
-                    FontSize="10"
-                    Margin="5,5.38,5,4.62"
-                    Padding="5,0"
-                    Click="ApplicationThemeOpenThemesFolder_Click"
-                    Content="{DynamicResource Options:OpenFolderButton}" />
-            </StackPanel>
-
             <TextBlock
             Grid.Row="13"
             Grid.Column="1"
