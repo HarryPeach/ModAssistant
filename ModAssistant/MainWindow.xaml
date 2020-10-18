@@ -8,7 +8,6 @@
     Title="{DynamicResource MainWindow:WindowTitle}"
     Icon="Resources/icon.ico"
     SizeChanged="Window_SizeChanged"
-    UIElement.PreviewMouseDown="Window_PreviewMouseDown"
     mc:Ignorable="d">
     <Grid>
         <Rectangle Fill="{DynamicResource ModAssistantBackground}" />

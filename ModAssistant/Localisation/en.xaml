@@ -56,7 +56,7 @@
 
     <!-- About Page -->
     <sys:String x:Key="About:Title">About</sys:String>
-    <sys:String x:Key="About:PageTitle">About Mod Assistant</sys:String>
+    <sys:String x:Key="About:PageTitle">About Mod Assistant Decrufted</sys:String>
     <sys:String x:Key="About:List:Header">I'm Assistant, and I made Mod Assistant for mod assistance, with a few principles in mind:</sys:String>
     <sys:String x:Key="About:List:Item1">Simplicity</sys:String>
     <sys:String x:Key="About:List:Item2">Portability</sys:String>
@@ -74,8 +74,6 @@
     </Span>
     <sys:String x:Key="About:SpecialThanks">Special Thanks ♥</sys:String>
     <sys:String x:Key="About:Donate">Donate</sys:String>
-    <sys:String x:Key="About:HeadpatsButton">Headpats</sys:String>
-    <sys:String x:Key="About:HugsButton">Hugs</sys:String>
 
     <!-- Options Page -->
     <sys:String x:Key="Options:Title">Options</sys:String>
