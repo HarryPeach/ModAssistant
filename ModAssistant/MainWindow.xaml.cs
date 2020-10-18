@@ -39,8 +39,8 @@ namespace ModAssistant
             InitializeComponent();
             Instance = this;
 
-            const int ContentWidth = 1280;
-            const int ContentHeight = 720;
+            const int ContentWidth = 640;
+            const int ContentHeight = 360;
 
             double ChromeWidth = SystemParameters.WindowNonClientFrameThickness.Left + SystemParameters.WindowNonClientFrameThickness.Right;
             double ChromeHeight = SystemParameters.WindowNonClientFrameThickness.Top + SystemParameters.WindowNonClientFrameThickness.Bottom;
@@ -117,7 +117,8 @@ namespace ModAssistant
 
                     if (!string.IsNullOrEmpty(GameVersion))
                     {
-                        MainWindow.Instance.ModsButton.IsEnabled = true;
+                        // TODO: Change to tabs
+                        //MainWindow.Instance.ModsButton.IsEnabled = true;
                     }
                 });
 
@@ -290,12 +291,6 @@ namespace ModAssistant
             {
                 Mods.Instance.RefreshColumns();
             }
-        }
-
-        private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            BackgroundVideo.Position = TimeSpan.Zero;
-            BackgroundVideo.Play();
         }
     }
 }

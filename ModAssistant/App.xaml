@@ -22,21 +22,23 @@
                 <ResourceDictionary x:Name="Icons" Source="Resources/Icons.xaml" />
 
                 <!-- Load Styles needed for the Theme engine to work. -->
-                <ResourceDictionary x:Name="Button_Style" Source="Styles/Button.xaml" />
+                <!--<ResourceDictionary x:Name="Button_Style" Source="Styles/Button.xaml" />
                 <ResourceDictionary x:Name="Label_Style" Source="Styles/Label.xaml" />
                 <ResourceDictionary x:Name="TextBlock_Style" Source="Styles/TextBlock.xaml" />
                 <ResourceDictionary x:Name="GridViewColumnHeader_Style" Source="Styles/GridViewColumnHeader.xaml" />
                 <ResourceDictionary x:Name="ListView_Style" Source="Styles/ListView.xaml" />
                 <ResourceDictionary x:Name="ListViewItem_Style" Source="Styles/ListViewItem.xaml" />
+                -->
                 <ResourceDictionary x:Name="Menu_Style" Source="Styles/Menu.xaml" />
                 <ResourceDictionary x:Name="MenuItem_Style" Source="Styles/MenuItem.xaml" />
+                <!--
                 <ResourceDictionary x:Name="CheckBox_Style" Source="Styles/CheckBox.xaml" />
                 <ResourceDictionary x:Name="ComboBoxItem_Style" Source="Styles/ComboBoxItem.xaml" />
                 <ResourceDictionary x:Name="ComboBox_Style" Source="Styles/ComboBox.xaml" />
                 <ResourceDictionary x:Name="ToggleButton_Style" Source="Styles/ToggleButton.xaml" />
                 <ResourceDictionary x:Name="ScrollBar_Style" Source="Styles/ScrollBar.xaml" />
                 <ResourceDictionary x:Name="RepeatButton_Style" Source="Styles/RepeatButton.xaml" />
-                <ResourceDictionary x:Name="Thumb_Style" Source="Styles/Thumb.xaml" />
+                <ResourceDictionary x:Name="Thumb_Style" Source="Styles/Thumb.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

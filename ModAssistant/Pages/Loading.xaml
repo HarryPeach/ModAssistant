@@ -37,27 +37,28 @@
             </Style.Triggers>
         </Style>
     </Page.Resources>
-    <Grid>
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <Image
+        <!--<Image
             Grid.Row="0"
             Margin="100,100,100,0"
             VerticalAlignment="Center"
             Source="{DynamicResource loadingInnerDrawingImage}"
-            Stretch="Uniform" />
-        <Image
+            Stretch="Uniform" />-->
+        <!--<Image
             Grid.Row="0"
             Margin="100,100,100,0"
             VerticalAlignment="Center"
             Source="{DynamicResource loadingMiddleDrawingImage}"
-            Stretch="Uniform" />
+            Stretch="Uniform" />-->
         <Image
             Grid.Row="0"
             Margin="100,100,100,0"
+            MaxWidth="100"
             VerticalAlignment="Center"
             Source="{DynamicResource loadingOuterDrawingImage}"
             Stretch="Uniform"
@@ -68,7 +69,7 @@
             Margin="100,10,100,100"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontSize="45"
+            FontSize="20"
             Text="{DynamicResource Loading:Loading}" />
     </Grid>
 </Page>

@@ -142,8 +142,6 @@ namespace ModAssistant
             if (loadedThemes.TryGetValue(theme, out Theme newTheme))
             {
                 LoadedTheme = theme;
-                MainWindow.Instance.BackgroundVideo.Pause();
-                MainWindow.Instance.BackgroundVideo.Visibility = Visibility.Hidden;
 
                 if (newTheme.ThemeDictionary != null)
                 {
@@ -158,23 +156,6 @@ namespace ModAssistant
                 if (sendMessage)
                 {
                     MainWindow.Instance.MainText = string.Format((string)Application.Current.FindResource("Themes:ThemeSet"), theme);
-                }
-
-                ApplyWaifus();
-
-                if (File.Exists(newTheme.VideoLocation))
-                {
-                    Uri videoUri = new Uri(newTheme.VideoLocation, UriKind.Absolute);
-                    MainWindow.Instance.BackgroundVideo.Visibility = Visibility.Visible;
-
-                    // Load the source video if it's not the same as what's playing, or if the theme is loading for the first time.
-                    if (!sendMessage || MainWindow.Instance.BackgroundVideo.Source?.AbsoluteUri != videoUri.AbsoluteUri)
-                    {
-                        MainWindow.Instance.BackgroundVideo.Stop();
-                        MainWindow.Instance.BackgroundVideo.Source = videoUri;
-                    }
-
-                    MainWindow.Instance.BackgroundVideo.Play();
                 }
 
                 ReloadIcons();
@@ -453,34 +434,6 @@ namespace ModAssistant
                 }
             }
             catch { return null; } //We're going to ignore errors here because backgrounds/sidebars should be optional.
-        }
-
-        /// <summary>
-        /// Applies waifus from currently loaded Theme.
-        /// </summary>
-        private static void ApplyWaifus()
-        {
-            Waifus waifus = loadedThemes[LoadedTheme].Waifus;
-
-            if (waifus?.Background is null)
-            {
-                MainWindow.Instance.BackgroundImage.Opacity = 0;
-            }
-            else
-            {
-                MainWindow.Instance.BackgroundImage.Opacity = 1;
-                MainWindow.Instance.BackgroundImage.ImageSource = waifus.Background;
-            }
-
-            if (waifus?.Sidebar is null)
-            {
-                MainWindow.Instance.SideImage.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                MainWindow.Instance.SideImage.Visibility = Visibility.Visible;
-                MainWindow.Instance.SideImage.Source = waifus.Sidebar;
-            }
         }
 
         /// <summary>
